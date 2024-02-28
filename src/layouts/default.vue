@@ -6,8 +6,7 @@ import AppCarousel from '../components/AppCarousel.vue';
 <template>
   <div class="">
     <AppHeader />
-    <AppCarousel/>
-    <div class="px-2">
+    <div class="">
       <RouterView></RouterView>
     </div>
   </div>

@@ -7,7 +7,7 @@ const toggleNav = ref(null);
 
 <template>
   <header
-    class="absolute z-10 w-full md:h-40 bg-white md:bg-transparent bg-gradient-to-b md:from-white from-10%"
+    class="absolute z-10 w-full md:h-40 md:bg-transparent bg-gradient-to-b md:from-white from-10%"
   >
     <div
       aria-label="contact"
@@ -52,7 +52,7 @@ const toggleNav = ref(null);
           @click="
             toggleNav === null ? (toggleNav = true) : (toggleNav = !toggleNav)
           "
-          class="border md:hidden"
+          class="border hidden"
         >
           <svg-icon type="mdi" :path="mdiViewHeadline"></svg-icon>
         </button>
