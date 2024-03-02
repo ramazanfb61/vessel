@@ -7,7 +7,7 @@ const toggleNav = ref(null);
 
 <template>
   <header
-    class="absolute z-10 w-full md:h-40 md:bg-transparent bg-gradient-to-b md:from-white from-10%"
+    class="md:absolute z-10 w-full md:h-40 md:bg-transparent bg-gradient-to-b md:from-white from-10%"
   >
     <div
       aria-label="contact"
@@ -44,7 +44,7 @@ const toggleNav = ref(null);
         class="md:flex block border-green-500 border text-white md:w-1/2 justify-between"
       >
         <div
-          class="bg-red-500 md:w-3/5 text-center text-5xl py-4 md:rounded-tr-full"
+          class="bg-red-500 md:w-3/5 md:text-center pl-5 text-5xl py-4 md:rounded-tr-full"
         >
           ARMA
         </div>
