@@ -3,6 +3,19 @@ import { onMounted, ref } from "vue";
 import { mdiViewHeadline, mdiPhone, mdiEmail, mdiHandshake } from "@mdi/js";
 
 const toggleNav = ref(null);
+const btn = ref(null);
+
+function btnAnimation() {
+  if (toggleNav.value === true) {
+    btn.value.click();
+  }
+}
+function toggleBarTog() {
+  toggleNav.value === null
+    ? (toggleNav.value = true)
+    : (toggleNav.value = !toggleNav.value);
+  console.log(toggleNav.value);
+}
 </script>
 
 <template>
@@ -33,29 +46,32 @@ const toggleNav = ref(null);
         class="hidden items-center px-3 md:flex border h-16 rounded-tr-full bg-red-500 text-white hover:bg-white hover:text-red-500 transition-colors ease-in"
       >
         <p class="font-medium">Teklif Alın</p>
-        <div class=" mx-2">
+        <div class="mx-2">
           <svg-icon class="h-6 w-6" type="mdi" :path="mdiHandshake"></svg-icon>
         </div>
       </button>
     </div>
 
-    <div class="md:flex">
+    <div class="md:flex" v-click-outside-element="btnAnimation">
       <div
         class="md:flex block border-green-500 border text-white md:w-1/2 justify-between"
       >
         <div
-          class="bg-red-500 md:w-3/5 md:text-center pl-5 text-5xl py-4 md:rounded-tr-full"
+          class="flex md:block justify-between bg-red-500 md:w-3/5 md:text-center px-5 text-5xl py-4 md:rounded-tr-full"
         >
           ARMA
+          <button
+            @click="toggleBarTog"
+            class="md:hidden"
+            ref="btn"
+          >
+            <svg-icon
+              class="h-11 text-9xl"
+              type="mdi"
+              :path="mdiViewHeadline"
+            ></svg-icon>
+          </button>
         </div>
-        <button
-          @click="
-            toggleNav === null ? (toggleNav = true) : (toggleNav = !toggleNav)
-          "
-          class="border hidden"
-        >
-          <svg-icon type="mdi" :path="mdiViewHeadline"></svg-icon>
-        </button>
       </div>
       <nav
         :class="{
@@ -63,10 +79,10 @@ const toggleNav = ref(null);
           'navBarOut hidden': toggleNav === false,
           hidden: toggleNav === null,
         }"
-        class="md:flex w-full bg-red-300 md:bg-white md:w-1/2 md:rounded-tl-full"
+        class="md:flex w-full absolute z-10 bg-red-300 md:bg-white md:w-1/2 md:rounded-tl-full"
       >
         <ul
-          class="md:grid md:justify-items-center md:space-x-10 grid-cols-4 divide-x-2 mx-auto h-screen md:h-3/5 font-semibold text-black"
+          class="md:grid md:justify-items-center md:space-x-10 grid-cols-4 divide-x-2 mx-auto h-2/3 md:h-3/5 font-semibold text-black"
         >
           <li class="p-2 md:py-7">Ana sayfa</li>
           <li class="p-2 md:py-7">Ana sayfa</li>

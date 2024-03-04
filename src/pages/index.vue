@@ -31,7 +31,7 @@ const plugins = ref([
         <img class="object-fit" src="../img/slider-5.jpg" alt="">
       </div>
       <template #viewport>
-        <span class="flicking-arrow-prev"></span>
+        <span class="flicking-arrow-prev text-white"></span>
         <span class="flicking-arrow-next"></span>
         <div class="flicking-pagination"></div>
       </template>
